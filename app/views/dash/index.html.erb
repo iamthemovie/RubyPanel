@@ -1,0 +1,24 @@
+<h1>List of VMs</h1>
+<table border=1 cellpadding=3>
+	<th>Name </th>
+	<th>Status</th>
+	<th>Memory</th>
+	<th>CPU Time</th>
+	<th>Control</th>
+<% @list.each do | vm | %>
+	<tr>
+		<td><%= vm[:name] %></td>
+		<td><%= state( vm[:state] ) %></td>
+		<td><%= vm[:memory] %></td>
+		<td><%= vm[:cpu_time]/100000000 %></td>
+		<td>
+		<% capabilities.each do | item | %>
+			<%= link_to item[:name], 
+				:action => 'command', 
+				:command => item[:command], 
+				:name => vm[:name] %>
+		<% end %>
+		</td>
+	</tr>
+<% end %>
+</table>
