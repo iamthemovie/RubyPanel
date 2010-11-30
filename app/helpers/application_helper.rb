@@ -31,4 +31,4 @@ module ApplicationHelper
 		end
 		return cap
 	end
-	
+end	
