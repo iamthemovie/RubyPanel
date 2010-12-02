@@ -1,11 +1,11 @@
 module ApplicationHelper
 	def state(state_id)
 		case state_id
-			when Virt::NO_STATE 		then state = "No State"
+			when Virt::NO_STATE 		        then state = "No State"
 			when Virt::RUNNING 			then state = "Running"
 			when Virt::BLOCKED 			then state = "Blocked"
-			when Virt::SUSPENDED 		then state = "Suspended"
-			when Virt::SHUTTING_DOWN 	then state = "Shut Down"
+			when Virt::SUSPENDED 		        then state = "Suspended"
+			when Virt::SHUTTING_DOWN 	        then state = "Shut Down"
 			when Virt::OFF 				then state = "Shut Off"
 			when Virt::CRASHED 			then state = "Crashed"
 		end
