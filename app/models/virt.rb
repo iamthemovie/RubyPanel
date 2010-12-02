@@ -7,7 +7,7 @@ class Virt
 	RUNNING 		= 1
 	BLOCKED 		= 2
 	SUSPENDED 		= 3
-	SHUTTING_DOWN 	= 4
+	SHUTTING_DOWN 	        = 4
 	OFF 			= 5
 	CRASHED 		= 6
 	
