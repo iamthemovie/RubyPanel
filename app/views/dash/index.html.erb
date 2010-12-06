@@ -1,26 +1,70 @@
 <h1>List of VMs</h1>
-<table border=1 cellpadding=3>
+<div id='virt'>
+<table>
 	<tr>
-	<th>Name </th>
-	<th>Status</th>
-	<th>Memory</th>
-	<th>CPU Time</th>
-	<th>Control</th>
+		<th>Name</th>
+		<th>State</th>
+		<th>Memory</th>
+		<th>CPU Time</th>
+		<th>Control</th>
 	</tr>
+
+
 <% @list.each do | vm | %>
 	<tr>
 		<td><%= vm[:name] %></td>
-		<td><%= state( vm[:state] ) %></td>
+		<td><span class="stateDisplay state<%= state(vm[:state])[:class]%>" title="<%= state(vm[:state])[:name] %>"></span></td>
 		<td><%= vm[:memory] %></td>
 		<td><%= vm[:cpu_time]/100000000 %></td>
-		<td>
-		<% capabilities(vm[:state]).each do | item | %>
+		
+		<td><% capabilities(vm[:state]).each do | item | %>
 			<%= link_to item[:name], 
-				:action => 'command', 
-				:command => item[:command], 
+				{:action => 'command', :command => item[:command]}, 
+				:class => "controlButton button"+item[:name],
 				:name => vm[:name] %>
 		<% end %>
 		</td>
 	</tr>
-<% end %>
+<% end %>	
+	<!--
+		<tr>
+		<td>intrepid</td>
+		<td><span class="stateCrashed">Crashed</span></td>
+		<td>262144</td>
+		<td>0</td>
+		
+		<td>
+			<a href="/dash/command?command=virtStart" class="buttonStart" name="intrepid">Start</a>
+		</td>
+	</tr>
+		<tr>
+		<td>intrepid</td>
+		<td><span class="stateBlocked">Blocked</span></td>
+		<td>262144</td>
+		<td>0</td>
+		
+		<td>
+			<a href="/dash/command?command=virtStart" class="buttonStart" name="intrepid">Start</a>
+		</td>
+	</tr>
+		<tr>
+		<td>intrepid</td>
+		<td><span class="stateNoState">No State</span></td>
+		<td>262144</td>
+		<td>0</td>
+		
+		<td>
+			<a href="/dash/command?command=virtStart" class="buttonStart" name="intrepid">Start</a>
+		</td>
+	</tr>
+		<tr>
+		<td>intrepid</td>
+		<td><span class="stateShuttingDown">Shutting Down</span></td>
+		<td>262144</td>
+		<td>0</td>
+		
+		<td>
+			<a href="/dash/command?command=virtStart" class="buttonStart" name="intrepid">Start</a>
+		</td>
+	</tr>-->
 </table>

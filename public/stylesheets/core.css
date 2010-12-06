@@ -1,0 +1,52 @@
+body {
+padding:2em;
+}
+
+.controlButton {
+	padding:3px;
+	padding-left:20px;
+}
+.buttonStart {
+background: url(../images/control_play.png) no-repeat center left;
+}
+.buttonDestroy {
+background: url(../images/cross.png) no-repeat center left;
+}
+.buttonSuspend {
+background: url(../images/control_pause.png) no-repeat center left;
+}
+.buttonShutdown {
+background: url(../images/control_stop.png) no-repeat center left;
+}
+.buttonRestart {
+background: url(../images/arrow_refresh.png) no-repeat center left;
+}
+.buttonResume {
+background: url(../images/control_end.png) no-repeat center left;
+}
+
+.stateDisplay {
+	padding:3px;
+	padding-left:20px;
+}
+.stateNoState {
+background: url(../images/exclamation_octagon_fram.png) no-repeat center left;
+}
+.stateRunning {
+background: url(../images/lightbulb.png) no-repeat center left;
+}
+.stateBlocked {
+background: url(../images/stop.png) no-repeat center left;
+}
+.stateSuspended {
+background: url(../images/suspend.png) no-repeat center left;
+}
+.stateShuttingDown {
+background: url(../images/cog.png) no-repeat center left;
+}
+.stateOff {
+background: url(../images/lightbulb_off.png) no-repeat center left;
+}
+.stateCrashed {
+background: url(../images/cross_octagon.png) no-repeat center left;
+}
