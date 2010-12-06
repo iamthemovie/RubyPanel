@@ -3,13 +3,13 @@ class Virt
 	attr_accessor :connection, :list
 	
 	# Class constants defining states
-	NO_STATE 		= 0
-	RUNNING 		= 1
-	BLOCKED 		= 2
-	SUSPENDED 		= 3
-	SHUTTING_DOWN 	= 4
-	OFF 			= 5
-	CRASHED 		= 6
+	NO_STATE        = 0
+	RUNNING         = 1
+	BLOCKED         = 2
+	SUSPENDED       = 3
+	SHUTTING_DOWN   = 4
+	OFF             = 5
+	CRASHED         = 6
 	
 	def self.openConnection(uri)
 		@connection = Libvirt::open(uri)
