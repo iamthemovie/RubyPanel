@@ -19,9 +19,8 @@
 		
 		<td><% capabilities(vm[:state]).each do | item | %>
 			<%= link_to item[:name], 
-				{:action => 'command', :command => item[:command]}, 
-				:class => "controlButton button"+item[:name],
-				:name => vm[:name] %>
+				{:action => 'command', :command => item[:command], :name => vm[:name] }, 
+				:class => "controlButton button"+item[:name] %>
 		<% end %>
 		</td>
 	</tr>
